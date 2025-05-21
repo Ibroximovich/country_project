@@ -51,12 +51,12 @@ let createCountry = document.querySelector(".create-country")
   let bt = document.querySelector(".bt")
   let sv = document.querySelector(".save")
 
-  let btn = document.querySelectorAll(".like-btn").forEach((btn) =>{
+   document.querySelectorAll(".like-btn").forEach((btn) =>{
     btn.addEventListener("click", () =>{
       bt.classList.toggle("fill-red-500")
     })
   })
-  let save = document.querySelectorAll(".save-btn").forEach((save) =>{
+   document.querySelectorAll(".save-btn").forEach((save) =>{
     save.addEventListener("click", () => {
       sv.classList.toggle("fill-blue-500")
     })
