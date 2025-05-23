@@ -39,8 +39,9 @@ let bt = document.querySelector(".bt")
             </div>
               <div class="flex justify-between items-center pb-[20px] px-[24px] gap-[10px]">
                  <button onclick="handeLikeclick(${item.id})"  class="  ${item.isLiked ? "bg-red-500 text-white" : "border-slate-500"}  like-bt  flex justify-center  w-[30%] flex items-center gap-[2px] border-[2px]   cursor-pointer  rounded-md p-2 duration-300  ">
-                   Liked
-                </button>
+                    Liked
+                 </button>
+               
                 <button onclick="handeSaveclick(${item.id})" class=" ${item.isBasket ? "bg-blue-500 text-white" : "border-slate-500"} flex justify-center w-[30%] flex items-center gap-[5px] p-2 border-[2px] cursor-pointer  rounded-md  duration-300  ">
                     Saved
                 </button>
@@ -81,6 +82,7 @@ searchInput.addEventListener("input",() =>{
 })
 
 function handeLikeclick(id){
+  bt.classList.toggle("fill-red-500")
  let findObject = countries.find(item => item.id == id)
  findObject.isLiked = !findObject.isLiked
  renderProduct(countries,createCountry)
@@ -88,10 +90,10 @@ function handeLikeclick(id){
 
 }
 
-function  handbtnclick(){
-  let arr = countries.filter(item => item.isLiked ==true)
+ function  handbtnclick(){
+  let arr = countries.filter(item => item.isLiked == true)
   renderProduct(arr,createCountry)
-}
+ }
 
 function handeSaveclick(id){
  let findObject = countries.find(item => item.id == id)
@@ -101,7 +103,7 @@ function handeSaveclick(id){
 }
 
 function  handsvdclick(){
-  let arr = countries.filter(item => item.isBasket ==true)
+  let arr = countries.filter(item => item.isBasket == true)
   renderProduct(arr,createCountry)
 }
 
